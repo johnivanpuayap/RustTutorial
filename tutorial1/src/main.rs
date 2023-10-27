@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     
     println!("Hello, world!");
@@ -101,10 +103,37 @@ fn main() {
         println!("{}", element);
     }
 
+    // in the example below, y will also have a u8 data type
+    let x: u8 = 4;
+    let y = x; // you can only use u8 data type for y
+    println!("{}, {}", x, y);
+
+    
+    //prelude: the list of things that are imported by default
+    //crate: a package or a collection of code in rust
+    //module: a specific piece of code or functionality within a crate
+
+    //importing a module
+    // must be done at the top of the file
+    // use std::io;
+    // :: -> path separator operator
+
+    let mut input = String::new();
+
+    // if you use input only a parameter, the function will create a copy of that variable
+    // so we need to use a reference which is by default immutable
+    // hence we need to pass it as mutable
+    // using read_line needs a string type
+    io::stdin().read_line(&mut input).expect("failed to read line");
+
+    //.expect handles the error
+    
+    //read_line returns a Result type
 
 
 
-    // strings
+    //console input
+
 
 
 }
